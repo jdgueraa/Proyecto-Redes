@@ -25,6 +25,10 @@ Este proyecto es un simulador educativo desarrollado en Python que modela una re
 - Python 3.8+
 - `networkx`, `matplotlib`, `numpy`
 
+```bash
+pip install networkx matplotlib numpy
+```
+
 ## 🚢 Ejecutar el simulador con Docker
 
 ### Requisitos:
