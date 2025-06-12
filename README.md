@@ -48,6 +48,7 @@ Para ver los gráficos (rutas u opciones del grafo) generados por el simulador d
 1. Asegúrate de tener la carpeta `salidas/` en tu proyecto:
 
 ```bash
+docker run -it -v "$(pwd)/salidas":/app/salidas simulador-isp
 mkdir salidas
 
 
