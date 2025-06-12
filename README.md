@@ -20,6 +20,19 @@ Este proyecto es un simulador educativo desarrollado en Python que modela una re
 - `main.py`: código principal del simulador.
 - `red_isp_peru.csv`: archivo con los datos de la red (ciudad_origen, ciudad_destino, latencia, costo, ancho de banda).
 
+## 🚢 Ejecutar el simulador con Docker
+
+### Requisitos:
+- Tener Docker instalado (https://www.docker.com/products/docker-desktop)
+
+### Pasos:
+
+1. Clonar este repositorio:
+```bash
+git clone https://github.com/jdgueraa/Proyecto-Redes.git
+cd simulador-red-isp
+
+
 
 ## 🛠 Requisitos
 
