@@ -39,7 +39,16 @@ cd Proyecto-Redes
 
 docker build -t simulador-isp .
 docker run -it simulador-isp
+```
 
+## 📷 Ver las imágenes generadas por el simulador
+
+Para ver los gráficos (rutas u opciones del grafo) generados por el simulador desde Docker:
+
+1. Asegúrate de tener la carpeta `salidas/` en tu proyecto:
+
+```bash
+mkdir salidas
 
 
 
