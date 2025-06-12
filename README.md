@@ -35,7 +35,10 @@ Este proyecto es un simulador educativo desarrollado en Python que modela una re
 1. Clonar este repositorio:
 ```bash
 git clone https://github.com/jdgueraa/Proyecto-Redes.git
-cd simulador-red-isp
+cd Proyecto-Redes
+
+docker build -t simulador-isp .
+docker run -it simulador-isp
 
 
 
