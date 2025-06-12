@@ -1,0 +1,16 @@
+ciudad_origen, ciudad_destino, latencia_ms, costo_soles_mb, ancho_banda_mbps
+Lima, Callao, 5, 0.01, 1000
+Lima, Arequipa, 45, 0.03, 500
+Lima, Trujillo, 35, 0.025, 600
+Lima, Piura, 65, 0.04, 300
+Lima, Cusco, 55, 0.035, 400
+Lima, Iquitos, 85, 0.06, 200
+Arequipa, Cusco, 40, 0.03, 350
+Arequipa, Tacna, 25, 0.02, 250
+Trujillo, Chiclayo, 20, 0.02, 400
+Trujillo, Piura, 30, 0.025, 350
+Cusco, Ayacucho, 50, 0.04, 200
+Cusco, Huancayo, 45, 0.035, 250
+Huancayo, Lima, 40, 0.03, 450
+Chiclayo, Piura, 25, 0.02, 300
+Iquitos, Pucallpa, 60, 0.05, 150
