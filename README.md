@@ -20,6 +20,11 @@ Este proyecto es un simulador educativo desarrollado en Python que modela una re
 - `main.py`: código principal del simulador.
 - `red_isp_peru.csv`: archivo con los datos de la red (ciudad_origen, ciudad_destino, latencia, costo, ancho de banda).
 
+##🛠 Requisitos
+
+- Python 3.8+
+- `networkx`, `matplotlib`, `numpy`
+
 ## 🚢 Ejecutar el simulador con Docker
 
 ### Requisitos:
@@ -34,8 +39,5 @@ cd simulador-red-isp
 
 
 
-## 🛠 Requisitos
 
-- Python 3.8+
-- `networkx`, `matplotlib`, `numpy`
 
