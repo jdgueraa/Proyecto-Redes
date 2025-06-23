@@ -6,9 +6,11 @@ import networkx as nx
 from matplotlib.patches import FancyBboxPatch
 import numpy as np
 
-
 # Archivo con las conexiones de la red ISP
 ARCHIVO_RED = "red_isp_peru.csv"
+ # Permitir que el usuario pase su propio archivo CSV como argumento al ejecutar el script
+if len(sys.argv) > 1:
+    ARCHIVO_RED = sys.argv[1]
 
 class RedISP:
     """Clase que representa la red de un ISP"""
@@ -392,8 +394,15 @@ class RedISP:
             plt.tight_layout()
             
             # Guardar la imagen
-            plt.savefig(nombre_archivo, dpi=300, bbox_inches='tight', 
-                       facecolor='white', edgecolor='none')
+            import os
+
+            # Crear carpeta de salida si no existe (por seguridad)
+            os.makedirs("salidas", exist_ok=True)
+
+            # Guardar dentro de la carpeta salidas/
+            ruta_salida = os.path.join("salidas", nombre_archivo)
+            plt.savefig(ruta_salida, dpi=300, bbox_inches='tight')
+
             plt.show()
             
             print(f"✅ Imagen guardada como: {nombre_archivo}")
