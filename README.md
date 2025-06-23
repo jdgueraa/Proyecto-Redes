@@ -18,12 +18,13 @@ Este proyecto es un simulador educativo desarrollado en Python que modela una re
 ## 📂 Archivos clave
 
 - `main.py`: código principal del simulador.
-- `red_isp_peru.csv`: archivo con los datos de la red (ciudad_origen, ciudad_destino, latencia, costo, ancho de banda).
+- `red_isp_peru.csv`: archivo CSV de ejemplo con la red base.
+- El simulador también acepta archivos `.csv` personalizados.
 
-##🛠 Requisitos
+## 🛠 Requisitos (si ejecutas sin Docker)
 
 - Python 3.8+
-- `networkx`, `matplotlib`, `numpy`
+- Librerías: `networkx`, `matplotlib`, `numpy`
 
 ```bash
 pip install networkx matplotlib numpy
@@ -32,29 +33,49 @@ pip install networkx matplotlib numpy
 ## 🚢 Ejecutar el simulador con Docker
 
 ### Requisitos:
-- Tener Docker instalado (https://www.docker.com/products/docker-desktop)
+- Docker instalado (https://www.docker.com/products/docker-desktop)
 
-### Pasos:
+### 🔁 Opción 1: Usar el archivo CSV por defecto (`red_isp_peru.csv`)
 
-1. Clonar este repositorio:
 ```bash
-git clone https://github.com/jdgueraa/Proyecto-Redes.git
-cd Proyecto-Redes
-
 docker build -t simulador-isp .
 docker run -it simulador-isp
 ```
 
+### 🧩 Opción 2: Usar tu propio archivo CSV personalizado
+
+1. Asegúrate de que tu archivo `.csv` tenga el siguiente formato:
+   ```
+   ciudad_origen,ciudad_destino,latencia_ms,costo_soles,ancho_banda_mbps
+   ```
+
+2. Ejecuta el contenedor montando tu archivo:
+
+```bash
+docker run -it -v "$(pwd)/mi_red.csv":/app/mi_red.csv simulador-isp /app/mi_red.csv
+```
+
 ## 📷 Ver las imágenes generadas por el simulador
 
-Para ver los gráficos (rutas u opciones del grafo) generados por el simulador desde Docker:
+Para que las imágenes del grafo generadas por el simulador se guarden fuera del contenedor:
 
-1. Asegúrate de tener la carpeta `salidas/` en tu proyecto:
+1. Crea una carpeta local `salidas/`:
+
+```bash
+mkdir salidas
+```
+
+2. Ejecuta Docker montando esta carpeta:
 
 ```bash
 docker run -it -v "$(pwd)/salidas":/app/salidas simulador-isp
-mkdir salidas
+```
 
+> También puedes combinar ambas opciones:
+```bash
+docker run -it -v "$(pwd)/salidas":/app/salidas -v "$(pwd)/mi_red.csv":/app/mi_red.csv simulador-isp /app/mi_red.csv
+```
 
+---
 
-
+¡Este simulador es ideal para explorar conceptos de enrutamiento, topología de red y optimización de tráfico de forma práctica y visual! 🚀
