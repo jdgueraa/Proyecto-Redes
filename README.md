@@ -38,11 +38,15 @@ pip install networkx matplotlib numpy
 ### 🔁 Opción 1: Usar el archivo CSV por defecto (`red_isp_peru.csv`)
 
 ```bash
-docker build -t simulador-isp .
-docker run -it simulador-isp
+docker pull jdguerraa/simulador-isp:latest
+docker run -it jdguerraa/simulador-isp
 ```
 
 ### 🧩 Opción 2: Usar tu propio archivo CSV personalizado
+- Crea tu propia carpeta:
+  ```
+   mkdir ~/salidas
+   ```
 
 1. Asegúrate de que tu archivo `.csv` tenga el siguiente formato:
    ```
@@ -52,7 +56,10 @@ docker run -it simulador-isp
 2. Ejecuta el contenedor montando tu archivo:
 
 ```bash
-docker run -it -v "$(pwd)/mi_red.csv":/app/mi_red.csv simulador-isp /app/mi_red.csv
+docker run -it \
+  -v "/ruta/completa/a/tu_archivo.csv":/app/mi_red.csv \
+  jdguerraa/simulador-isp /app/mi_red.csv
+
 ```
 
 ## 📷 Ver las imágenes generadas por el simulador
@@ -68,12 +75,16 @@ mkdir salidas
 2. Ejecuta Docker montando esta carpeta:
 
 ```bash
-docker run -it -v "$(pwd)/salidas":/app/salidas simulador-isp
+docker run -it -v "$(pwd)/salidas":/app/salidas jdguerraa/simulador-isp
 ```
 
 > También puedes combinar ambas opciones:
 ```bash
-docker run -it -v "$(pwd)/salidas":/app/salidas -v "$(pwd)/mi_red.csv":/app/mi_red.csv simulador-isp /app/mi_red.csv
+docker run -it \
+  -v "/ruta/completa/a/tu_archivo.csv":/app/mi_red.csv \
+  -v "/ruta/completa/a/tu_carpeta_salidas":/app/salidas \
+  jdguerraa/simulador-isp /app/mi_red.csv
+
 ```
 
 ---
