@@ -43,11 +43,6 @@ docker run -it jdguerraa/simulador-isp
 ```
 
 ### 🧩 Opción 2: Usar tu propio archivo CSV personalizado
-- Crea tu propia carpeta:
-  ```
-   mkdir ~/salidas
-   ```
-
 1. Asegúrate de que tu archivo `.csv` tenga el siguiente formato:
    ```
    ciudad_origen,ciudad_destino,latencia_ms,costo_soles,ancho_banda_mbps
