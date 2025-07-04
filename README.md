@@ -54,7 +54,7 @@ docker run -it -p 80:80 -v %cd%/salidas:/app/salidas jdguerraa/simulador-isp:lat
 
 ```bash
 docker run -it -p 80:80 ^
--v "%cd%/salidas:/app/salidas" ^
+-v %cd%/salidas:/app/salidas ^
 -v "RUTA\A\TU\CARPETA:/archivos" ^
 simulador-isp:latest bash start.sh /archivos/NOMBRE_DEL_ARCHIVO.csv
 ```
