@@ -37,11 +37,19 @@ pip install networkx matplotlib numpy flask
 ### Requisitos:
 - Docker instalado (https://www.docker.com/products/docker-desktop)
 
-### 🔁 Opción 1: Usar el archivo CSV por defecto (`red_isp_peru.csv`) | (comando para windows)
+### 🔁 Opción 1: Usar el archivo CSV por defecto (`red_isp_peru.csv`) | 
+
+a. Comando para windows
 
 ```bash
 docker pull jdguerraa/simulador-isp:latest
 docker run -it -p 80:80 -v %cd%/salidas:/app/salidas jdguerraa/simulador-isp:latest
+```
+b. Comando para MacOs
+
+```bash
+docker pull jdguerraa/simulador-isp:latest
+docker run -it -p 80:80 -v "$(pwd)/salidas":/app/salidas jdguerraa/simulador-isp:latest
 ```
 
 ### 🧩 Opción 2: Usar tu propio archivo CSV personalizado y guardar las imagenes en una carpeta "salidas" | (comando para windows)
