@@ -14,7 +14,6 @@ if len(sys.argv) > 1:
 
 class RedISP:
     """Clase que representa la red de un ISP"""
-    
     def __init__(self):
         self.grafo = {}  # diccionario para guardar las conexiones
         self.ciudades = []  # lista de ciudades disponibles
@@ -704,3 +703,8 @@ if __name__ == "__main__":
     except Exception as e:
         print(f"\n💥 Error inesperado: {e}")
         print("Contacta al administrador del sistema")
+    finally:
+        # Al cerrar el simulador, lanzar la galería
+        print("\n🌐 Abriendo galería de imágenes...")
+        import subprocess
+        subprocess.run(["python", "gallery.py"])
